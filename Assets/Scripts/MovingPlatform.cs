@@ -21,7 +21,26 @@ public class MovingPlatform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isReversing == false)
+        {
+            myPlatform.position = Vector3.MoveTowards(myPlatform.position, myEndPoint.position, speed);
+
+            if (myPlatform.position == myEndPoint.position)
+            {
+                isReversing = true;
+            }
+
+        } else
+        {
+            myPlatform.position = Vector3.MoveTowards(myPlatform.position, myStartPoint.position, speed);
+
+            if (myPlatform.position == myStartPoint.position)
+            {
+                isReversing = false;
+            }
+
+        }
         
-        myPlatform.position = Vector3.MoveTowards(myPlatform.position, myEndPoint.position, speed);
+        
     }
 }

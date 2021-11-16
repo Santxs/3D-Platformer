@@ -26,6 +26,8 @@ public class CharacterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+
         sprintTimer = maxSprint;
 
         cam = GameObject.Find("Main Camera");
@@ -44,6 +46,8 @@ public class CharacterController : MonoBehaviour
         {
             myRigidbody.AddForce(transform.up * jumpForce);
         }
+
+        camRotation = Mathf.Clamp(camRotation, -40.0f, 40.0f);
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
