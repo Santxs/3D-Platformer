@@ -15,6 +15,12 @@ public class CharacterController : MonoBehaviour
     float rotationSpeed = 2.0f;
     float camRotationSpeed = 1.5f;
 
+    public AudioClip jump;
+    public AudioClip backgroundMusic;
+
+    public AudioSource sfxPlayer;
+    public AudioSource musicPlayer;
+
     bool isOnGround;
     public GameObject groundChecker;
     public LayerMask groundLayer;
