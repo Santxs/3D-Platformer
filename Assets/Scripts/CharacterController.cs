@@ -28,6 +28,7 @@ public class CharacterController : MonoBehaviour
 
     public float maxSprint = 5.0f;
     float sprintTimer;
+    internal bool isGrounded;
 
     // Start is called before the first frame update
     void Start()
